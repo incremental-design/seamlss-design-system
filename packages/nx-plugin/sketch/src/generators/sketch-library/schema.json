@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "NxPluginSketch",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "description": {
+      "type": "string",
+      "description": "what this sketch library contains",
+      "x-prompt": "What does this sketch library contain? How will it be referenced in other sketch files?"
+    },
+    "tags": {
+      "type": "string",
+      "description": "Add tags to the project (used for linting)",
+      "alias": "t"
+    },
+    "directory": {
+      "type": "string",
+      "description": "A directory where the project is placed"
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ]
+}

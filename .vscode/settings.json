@@ -1,3 +1,4 @@
 {
-    "workbench.panel.opensMaximized": "always"
+  "workbench.panel.opensMaximized": "always",
+  "eslint.validate": ["json"]
 }

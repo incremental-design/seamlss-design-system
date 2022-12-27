@@ -23,6 +23,12 @@
         "production",
         "^production"
       ]
+    },
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
+      ]
     }
   },
   "namedInputs": {
@@ -31,12 +37,18 @@
       "sharedGlobals"
     ],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/.eslintrc.json"
     ],
     "sharedGlobals": []
   },
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
+  },
+  "generators": {
+    "@incremental.design/nx-plugin-sketch:sketch-library": {
+      "directory": "sketch"
+    }
   }
 }

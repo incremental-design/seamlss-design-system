@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-plugin-sketch",
+  "version": "0.0.1",
+  "generators": {
+    "sketch-library": {
+      "factory": "./src/generators/sketch-library/generator",
+      "schema": "./src/generators/sketch-library/schema.json",
+      "description": "make a new sketch library"
+    }
+  }
+}
