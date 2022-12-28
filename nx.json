@@ -48,7 +48,10 @@
   },
   "generators": {
     "@incremental.design/nx-plugin-sketch:sketch-library": {
-      "directory": "sketch"
+      "directory": "sketch",
+      "publicUrl": "seamlss.incremental.design",
+      "endpoint": "https://nyc3.digitaloceanspaces.com",
+      "bucket": "seamlss-design-system"
     }
   }
 }

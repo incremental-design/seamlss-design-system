@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "cli": "nx",
+  "title": "Publish executor",
+  "description": "Publish the sketch library to an s3 bucket",
+  "type": "object",
+  "properties": {
+    "endpoint": {
+      "type": "string",
+      "description": "the s3 provider to connect to",
+      "x-prompt": "What s3 provider are you using (e.g. nyc3.digitalocean.com)?"
+    },
+    "bucket": {
+      "type": "string",
+      "description": "The bucket to upload to",
+      "x-prompt": "What is the bucket name you are uploading to (e.g. fancy-sketch-library)"
+    }
+  },
+  "required": [
+    "endpoint",
+    "bucket"
+  ]
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>lmnop</title>
+    <description>wyqwerg</description>
+    <image>
+      <url>https://seamlss.incremental.design/Lmnop.jpg</url>
+      <title>lmnop</title>
+    </image>
+    <generator>Sketch</generator>
+    <item>
+      <title>lmnop</title>
+      <pubDate>Thu, 29 Dec 2022 19:53:40 GMT</pubDate>
+      <enclosure url="https://seamlss.incremental.design/Lmnop.sketch" type="application/octet-stream" sparkle:version="2"/>
+    </item>
+  </channel>
+</rss>

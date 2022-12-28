@@ -17,14 +17,21 @@
     "@swc-node/register": "^1.4.2",
     "@swc/cli": "~0.1.55",
     "@swc/core": "^1.2.173",
+    "@types/decompress": "4.2.4",
+    "@types/encodeurl": "1.0.0",
+    "@types/node": "18.11.18",
+    "@types/xml2js": "0.4.11",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "aws-sdk": "2.1284.0",
+    "dotenv": "16.0.3",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "15.4.1",
     "prettier": "^2.6.2",
     "tslib": "^2.3.0",
-    "typescript": "~4.8.2"
+    "typescript": "~4.8.2",
+    "xml2js": "0.4.23"
   }
 }
