@@ -1,8 +1,8 @@
 {
-  "name": "sketch-lmnop",
+  "name": "sketch-wireframing-tools",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "packages/sketch/lmnop/src",
+  "sourceRoot": "packages/sketch/wireframing-tools/src",
   "targets": {
     "publish-sketch-library": {
       "executor": "@incremental.design/nx-plugin-sketch:publish-sketch-library",

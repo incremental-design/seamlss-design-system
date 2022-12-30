@@ -1,1 +1,0 @@
-sketch://add-library?url=https%3A%2F%2Fseamlss.incremental.design%2FLmnop.xml
