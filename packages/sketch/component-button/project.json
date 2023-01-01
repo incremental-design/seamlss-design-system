@@ -1,0 +1,16 @@
+{
+  "name": "sketch-component-button",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/sketch/component-button/src",
+  "targets": {
+    "publish-sketch-library": {
+      "executor": "@incremental.design/nx-plugin-sketch:publish-sketch-library",
+      "options": {
+        "endpoint": "https://nyc3.digitaloceanspaces.com",
+        "bucket": "seamlss-design-system"
+      }
+    }
+  },
+  "tags": []
+}
