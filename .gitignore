@@ -39,3 +39,14 @@ testem.log
 Thumbs.db
 
 *.env
+
+
+.obsidian/appearance.json
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace.json
+.obsidian/themes
+
+.obsidian/plugins
+/.obsidian/appearance.json
+/.obsidian/workspace.json
