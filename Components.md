@@ -121,8 +121,24 @@ flowchart LR
 a floating button on the edge of a list that displays the number of items that are hidden beyond the edge. If the list is expandable, then pressing the button expands the list. Otherwise, pressing the button scrolls the list
 ## Checklist Item
 ## Checklist Progress Indicator
-## Timeline Leaf
-## Timeline Branch
+## Timeline marker
+a point along a track in a timeline
+## Timeline track
+a branch of a timeline. can contain  mix of timeline markers and timeline segments
+## Timeline segment
+a range along a track in a timeline
+```mermaid
+flowchart LR
+  TS((Timeline Segment)) -- can contain --> L(Label) & G(Graphic) & I(Icon) & T(Token)
+  subgraph Content
+    L
+    G
+    I
+  end
+  subgraph Control
+    T
+  end
+```
 ## Tree List Leaf
 ## Tree List Branch
 ## Collection Item
@@ -186,7 +202,7 @@ flowchart LR
 SC((socket)) -- contains --> Label
 ```
 ## Playhead
-a vertical or horizontal line that can be repositioned along a filmstrip or graph
+a vertical or horizontal line that can be repositioned along a filmstrip or graph.
 ## Filmstrip
 a horizontal bar that controls the playback of a video. It always contains a playhead, and buttons to play and pause a video. It can also contain thumbnails of keyframes in the video, and other buttons and labels to control aspects of playback.
 ```mermaid
@@ -202,9 +218,11 @@ flowchart LR
 C((Checklist)) -- contains --> CI(Cheklist Item) & CH(Checklist Header) & CP(Checklist Progress Indicator) & LH(List Handle)
 ```
 ## Timeline
+A horizontally scrolling list of layers that includes points and regions over time. E.g. a timeline in a video editor
 ```mermaid
 flowchart LR
-	T((Timeline)) -- contains --> TL(Timeline Leaf) & TB(Timeline Branch) & LH(List Handle)
+	T((Timeline)) -- contains --> TT(Timeline Track) & LH(List Handle) & PH(Playhead)
+  TT -- contains --> TS(Timeline Segment) & TM(Timeline Marker)
 ```
 ## Tree List
 ```mermaid
@@ -360,3 +378,8 @@ flowchart LR
 	FS -- contains --> PL(Playhead) & BT(Button)
 	FS -- can contain --> TI(Time) & DT(DateTime) & L(Label) & DI(Dial) & GA(Gauge)
 ```
+
+%%todo: canvas as container, with bounding box, box handles as controls - need to note that a bounding box can also contain a lable or an inline label%%
+
+%%todo: rubber band select for checklist, timeline, treelist, collection, graph, node graph - where rubber band select can be discontiguous, and have handles%%
+%%todo: span for aformentioned, where a span is a selection that is persisted to the container%%
