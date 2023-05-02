@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "4f48db53be2bdc46",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa48ac88d336b0d7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "75a54f6f0d25dee1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Components.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3f35b03d795f82ce",
+    "type": "split",
+    "children": [
+      {
+        "id": "85b3c4cb97b458a8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7208d5c63efbd87c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "dcf876e30a744c4f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5fa3cf7f5f355aac",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "e2a2dea3e29398b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "27ff83b792ef525d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9221e3bd0a018fd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Components.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "33ded1fbdf56d91a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Components.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "48eef2a616805d0c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d786d14ccf483d6c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Components.md"
+              }
+            }
+          },
+          {
+            "id": "8b4ed6c503258426",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 463.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": true,
+      "command-palette:Open command palette": true
+    }
+  },
+  "active": "75a54f6f0d25dee1",
+  "lastOpenFiles": [
+    "README.md",
+    "Components.md",
+    "Components 1.md",
+    "attachments/CleanShot 2023-04-02 at 12.21.34@2x.png",
+    "attachments",
+    "assets/CleanShot 2023-04-02 at 12.19.12@2x.png",
+    "assets",
+    "CleanShot 2023-04-02 at 12.18.43@2x.png",
+    "CleanShot 2023-04-02 at 12.17.39@2x.png",
+    "CleanShot 2023-04-02 at 12.16.44@2x.png",
+    "CleanShot 2023-04-02 at 11.10.26@2x.png",
+    "CONTRIBUTE.md",
+    "2023-03-31.md",
+    "packages/nx-plugin/sketch/src/generators/sketch-library/files/src/__className__.jpg",
+    "Untitled.canvas"
+  ]
+}

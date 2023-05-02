@@ -2,45 +2,156 @@
 %%todo: span for aformentioned, where a span is a selection that is persisted to the container%%
 
 # Content
-## Badge
+## Header
+
+## Body Text
+
+## Icon
+Any pictograph. Can be inlined with text or labels, or occupy its own register
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline), [small](./Styles#small)| none |
+
+## Graphic
+A visualization of data
+
+### Bar
+A rectangle, the length of which signifies a value, relative to other bars in a graph
+
+### Gauge
+A bar, curved into an arc. The length of the bar signifies a percentage.
+
+### Line
+
+### Donut
+
+### Image
+
+### Sunburst
+%% sunburst is a kind of chart ... and it can have controls as well. shouldn't it be in containers? %%
+
+### Video
+
+## Label
+
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline) |  |
+
+
+A single line of text that:
+* describes graphical [content](#Content)
+* describes the type, category, or common attributes of [body text](#Body-Text)
+* indicates the value of data within a [control](#Control)
+* describes the content within a [container](#Container)
+```mermaid
+flowchart LR
+
+subgraph C0[Content]
+L((Label)) -..->|can contain| IC(Icon)
+end
+
+subgraph C1[Content]
+	direction LR
+	subgraph G[Graphic]
+		BA(Bar) -->|contains| L
+		GA1(Gauge) -->|contains| L
+		LI(Line) -->|contains| L
+		IM(Image) -..->|can contain| L
+		SU(Sunburst) -->|contains| L
+		VI(Video) -..->|can contain| L
+	end
+HE(Header) -..->|can contain| L
+BT(Body Text) -..->|can contain| L
+end
+
+subgraph CN[Control]
+	direction LR
+	AV(Avatar) -..->|can contain| L
+	CI(Checklist Item) -..->|can contain| L
+	CP(Checklist Progress Indicator) -..->|can contain| L
+	CL(Collection Item) -..->|can contain| L
+	FI(Field) -->|contains| L
+	DR(Dropdown) -->|contains| L
+	ST(Stepper) -->|contains| L
+	DI(Dial) -..->|can contain| L
+	FS(Filmstrip) -..->|can contain| L
+	GA2(Gauge) -..->|can contain| L
+	LH(List Header) -->|contains| L
+	NL(Navigation Link) -->|contains| L
+	NB(Navigation Breadcrumb) -->|contains| L
+	NT(Navigation Tabs) -->|contains| L
+	PL(Playhead) -->|contains| L
+	SL(Slider) -..->|can contain| L
+	SO(Socket) -->|contains| L
+	TH(Table Header) -->|contains| L
+	TM(Timeline Marker) -..->|can contain| L
+	TT(Timeline Track) -..->|can contain| L
+	TS(Timeline Segment) -->|contains| L
+	TO(Toggle) -..->|can contain| L
+	TK(Token) -->|contains| L
+	TL(Tree List Leaf) -->|contains| L
+	TB(Tree List Branch) -..->|can contain| L
+end
+
+subgraph CT[Container]
+	CO(Collection) -..->|can contain| L
+	GR(Graph) -->|contains| L
+	NO(Node) -->|contains| L
+	PT(Palette) -->|contains| L
+	PA(Panel) -..->|can contain| L
+	TC(Table Cell) -..->|can contain| L 
+end
+
+```
+
+* Multiple labels can be applied to a graphic, body text, control or container.
+	* There are several types of labels, each of which have a distinct appearance. The variation in appearance reinforces content hierarchy, especially when several labels are applied to the same component.
+* Labels should never be applied to other labels.
+* Labels are always inlined
+### Annotation
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline) |  |
+
+a label that can be attached to the focus ring or border of any other component
+
+### Badge
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline) | [hoverable](./Affordances#hoverable), [peekable](./Affordances#peekable), [pressable](./Affordances#pressable) |
 A short text, or text and icon, enclosed by a container, similar to a token. Unlike a token, a badge cannot be dragged or deleted.
 * Single Segment
 * Multi Segment
-## Bar
-A rectangle, the length of which signifies 
-* Gauge 
-## Body Text
-## Date
+
+### Date
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline) |  |
 a date, which can include year, month and day
-## DateTime
+
+### DateTime
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline) |  |
 a date and a timestamp, combined into a single label
 ```mermaid
 flowchart LR
 DT((DateTime)) -- contains --> D(Date) & T(Time)
 ```
-## Donut
-## Graphic
-an image or video
-%%is an icon a subtype of a graphic. can these two be merged?%%
-## Header
-## Icon
-## Label
-```mermaid
-flowchart LR
-F(Field) -- can contain --> L((Label))
-S(Stepper) & D(Dropdown) & Di(Dial) & G(Gauge) -- type of --> F
-T(Table Header) & Li(List Header) -- can contain --> F
-```
+
 ### Inline Indicator
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline) |  |
 a label that can be inlined within a field, and indicates special characteristics e.g. "required" or "warning"
-### Annotation
-a label that can be attached to the focus ring or border of any other component
-![](CleanShot%202023-04-02%20at%2012.21.34@2x.png)
-## Line
-## Sunburst
-%% sunburst is a kind of chart ... and it can have controls as well. shouldn't it be in containers? %%
-## Time
+
+### Time
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline) |  |
 a timestamp, which can be formatted as HH:MM, HH:MM:SS:Timezone, HH:MM:SS:MS:Timezone, or as a SMPTE frame-time
+
 # Control
 
 All controls effect a *change* in the application.
@@ -120,23 +231,27 @@ flowchart LR
 	G
 	end
 ```
-## Dial
-a field that contains a knob that can be rotated 360 degrees for input
+## Field
 
+* single-segment
+* multi-segment
+	* *a multi-segment field groups two or more single segment fields together*
+* multiline
 ```mermaid
 flowchart LR
-	DI((Dial)) -- contains --> FI(Field) ---|or| B(Body Text)
-	DI -- can contain --> L(Label)
+	F((Field)) -- contains --> I(Icon) ---| and/or| L(Label)
+	F -- can contain --> T(Token)
 	subgraph Content
-		B
+		I
 		L
 	end
 	subgraph Control
-		FI
+		T
 	end
 ```
-## Dropdown
-* a field that contains a pre-populated menu of items
+
+### Dropdown
+field that contains a pre-populated menu of items
 ```mermaid
 flowchart LR
 	D((Dropdown)) -- contains one or more of --> BT(Body Text) & HE(Header) & L(Label) & T(Time) & DT(DateTime) & DA(Date) & IC(Icon) & GR(Graphic) & TO(Token) & AV(Avatar)
@@ -156,24 +271,29 @@ flowchart LR
 	end
 ```
 
-## Field
+### Stepper
+* a field that contains a button for incrementing or decrementing a numerical value
+	```mermaid
+	flowchart LR
+		ST((Stepper)) -- contains --> FI(Field)
+	```
 
-* single-segment
-* multi-segment
-	* *a multi-segment field groups two or more single segment fields together*
-* multiline
+## Dial
+A knob that can be rotated 360 degrees for input. Can contain a field.
+
 ```mermaid
 flowchart LR
-	F((Field)) -- contains --> I(Icon) ---| and/or| L(Label)
-	F -- can contain --> T(Token)
+	DI((Dial)) -- contains --> FI(Field) ---|or| B(Body Text)
+	DI -- can contain --> L(Label)
 	subgraph Content
-		I
+		B
 		L
 	end
 	subgraph Control
-		T
+		FI
 	end
 ```
+
 ## Filmstrip
 a horizontal bar that controls the playback of a video. It always contains a playhead, and buttons to play and pause a video. It can also contain thumbnails of keyframes in the video, and other buttons and labels to control aspects of playback.
 ```mermaid
@@ -247,6 +367,22 @@ a breadcrumb is a button within a navigation that takes a user back to a previou
 * multi-segment
 a multi-segment breadcrumb lets a jump back to any previous location within a navigational hierarchy
 * generally, it is best practice to avoid multi-segment breadcrumbs. However, there are specific situations in which they are unavoidable
+
+## Navigation Tabs
+* also known as a [segmented control](https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/)
+* a toggle in which only one item can be selected. The selected item switches the contents and controls displayed within a container
+```mermaid
+flowchart LR
+	S((Segmented Control)) -- can contain --> L(Label)
+	S -- contains --> BO(Body Text)
+	BO ---| and / or | I(Icon)
+	subgraph Content
+	BO
+	I
+	L
+	end
+```
+
 ## Playhead
 a vertical or horizontal line that can be repositioned along a filmstrip or graph.
 ```mermaid
@@ -260,19 +396,6 @@ subgraph Content
 	II
 end
 ```
-## Segmented Control
-```mermaid
-flowchart LR
-	S((Segmented Control)) -- can contain --> L(Label)
-	S -- contains --> BO(Body Text)
-	BO ---| and / or | I(Icon)
-	subgraph Content
-	BO
-	I
-	L
-	end
-```
-
 ## Slider
 * Horizontal
 * Vertical
@@ -303,12 +426,6 @@ subgraph Content
 	I
 end
 ```
-## Stepper
-* a field that contains a button for incrementing or decrementing a numerical value
-	```mermaid
-	flowchart LR
-		ST((Stepper)) -- contains --> FI(Field)
-	```
 ## Table Header
 ```mermaid
 flowchart LR
@@ -322,47 +439,6 @@ flowchart LR
 		CP
 	end
 ```
-## Table Cell
-```mermaid
-flowchart LR
-	TC((Table Cell)) -- can contain --> B(Button) & TS(Toggle Switch) & SC(Segmented Control) & S(Slider) & F(Field) & ST(Stepper) & DR(Dropdown) & DI(Dial) & GA(Gauge) & CI(Checklist Item) & CP(Checklist Progress Indicator) & TLL(Tree List Leaf) & TLB(Tree List Branch) & BT(Body Text) & TI(Time) & DA(Date) & DT(DateTime) & BA(Badge) & BR(Bar) & DO(Donut) & SU(Sunburst) & LI(Line) & IC(Icon) & GR(Graphic) & CLI(Collection Item) & CLL(Collection) & GRA(Graph) & VPP(Video Player) & AV(Avatar)
-	subgraph Control
-		AV
-		B
-		TS
-		SC
-		S
-		F
-		ST
-		DR
-		DI
-		GA
-		CI
-		CP
-		TLL
-		TLB
-		CLI
-	end
-	subgraph Content
-		BT
-		TI
-		DA
-		DT
-		BA
-		BR
-		DO
-		SU
-		LI
-		IC
-		GR
-	end
-	subgraph Container
-		CLL
-		GRA
-		VPP
-	end
-```
-
 ## Timeline marker
 a point along a track in a timeline
 ## Timeline track
@@ -411,7 +487,11 @@ flowchart LR
 		A
 	end
 ```
-## Toggle Switch
+## Toggle
+a button in which one or more items can remain pressed after they are released. 
+### Switch
+a toggle with two states that looks like an actual switch.
+
 ```mermaid
 flowchart LR
 	B((Button)) -- can contain --> L(Label)
@@ -438,7 +518,16 @@ end
 ## Tree List Branch
 
 # Container
-All containers group related content and controls together.
+All containers group related content and controls together. Some containers can also contain other containers.
+```mermaid
+flowchart LR
+PA(Panel) -- can contain --> CA(Canvas) & CH(Checklist) & GR(Graph) & NG(Node Graph) & TA(Table) & TI(Timeline) & TR(Tree List) & VP(Video Player)
+NA(Navigation)
+PAL(Palette)
+POP(Popover)
+TA -- contains --> TAB(Table Cell)
+NG -- contains --> NO(Node)
+```
 ## Canvas
 %%todo: canvas as container, with bounding box, box handles as controls - need to note that a bounding box can also contain a lable or an inline label%%
 ## Checklist
@@ -604,6 +693,47 @@ flowchart LR
 		VPP
 	end
 ```
+## Table Cell
+```mermaid
+flowchart LR
+	TC((Table Cell)) -- can contain --> B(Button) & TS(Toggle Switch) & SC(Segmented Control) & S(Slider) & F(Field) & ST(Stepper) & DR(Dropdown) & DI(Dial) & GA(Gauge) & CI(Checklist Item) & CP(Checklist Progress Indicator) & TLL(Tree List Leaf) & TLB(Tree List Branch) & BT(Body Text) & TI(Time) & DA(Date) & DT(DateTime) & BA(Badge) & BR(Bar) & DO(Donut) & SU(Sunburst) & LI(Line) & IC(Icon) & GR(Graphic) & CLI(Collection Item) & CLL(Collection) & GRA(Graph) & VPP(Video Player) & AV(Avatar)
+	subgraph Control
+		AV
+		B
+		TS
+		SC
+		S
+		F
+		ST
+		DR
+		DI
+		GA
+		CI
+		CP
+		TLL
+		TLB
+		CLI
+	end
+	subgraph Content
+		BT
+		TI
+		DA
+		DT
+		BA
+		BR
+		DO
+		SU
+		LI
+		IC
+		GR
+	end
+	subgraph Container
+		CLL
+		GRA
+		VPP
+	end
+```
+
 ## Timeline
 A horizontally scrolling list of layers that includes points and regions over time. E.g. a timeline in a video editor
 ```mermaid
@@ -649,3 +779,6 @@ end
 
 
 
+| sizes | affordances |
+| ----- | ----------- |
+| [inline](./Styles#inline), [small](./Styles#small), [medium](./Styles#medium), [large](./Styles#large), [massive](./Styles#massive) | [hoverable](./Affordances#hoverable), [peekable](./Affordances#peekable), [pressable](./Affordances#pressable), [toggleable](./Affordances#toggleable), [slideable](./Affordances#slideable), [selectable](./Affordances#selectable), [draggable](./Affordances#draggable), [focusable](./Affordances#focusable), [editable](./Affordances#editable), [scrollable](./Affordances#scrollable) |
